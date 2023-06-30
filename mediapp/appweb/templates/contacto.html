@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+
+{% load static %}
+
+{%block contenido%}
+
+{% load crispy_forms_tags %}
+
+<div class="container mt-5">
+  <div class="text-center">
+    <img src="imagen/contacto_imagen.jpg" alt="Rayo MakWeen" style="max-width: 600px;">
+  </div>
+  <h2 class="mt-4">Contacto</h2>
+
+  <form id="formularioContacto" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{form | crispy}}
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+  {{mensaje}}
+</div>
+
+{% endblock %}
